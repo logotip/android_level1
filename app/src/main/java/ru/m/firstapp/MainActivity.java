@@ -1,6 +1,5 @@
 package ru.m.firstapp;
 
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) view;
         String op = button.getText().toString();
         String number = numberField.getText().toString();
-        // если введенно что-нибудь
+
         if (number.length() > 0) {
             number = number.replace(',', '.');
             try {
