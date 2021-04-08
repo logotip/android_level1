@@ -21,72 +21,72 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator);
-        resultField =(TextView) findViewById(R.id.resultField);
+        resultField = (TextView) findViewById(R.id.resultField);
         numberField = (EditText) findViewById(R.id.numberField);
         operationField = (TextView) findViewById(R.id.operationField);
     }
 
-    protected void onSaveInstateState(Bundle outState){
+    protected void onSaveInstateState(Bundle outState) {
         outState.putString("OPERATION", lastOperation);
-        if(operand!=null) outState.putDouble("OPERAND", operand);
+        if (operand != null) outState.putDouble("OPERAND", operand);
         super.onSaveInstanceState(outState);
     }
 
-    public void onNumberClick(View view){
+    public void onNumberClick(View view) {
 
-        Button button = (Button)view;
+        Button button = (Button) view;
         numberField.append(button.getText());
 
-        if(lastOperation.equals("=") && operand!=null){
+        if (lastOperation.equals("=") && operand != null) {
             operand = null;
         }
     }
-    public void onOperationClick(View view){
 
-        Button button = (Button)view;
+    public void onOperationClick(View view) {
+
+        Button button = (Button) view;
         String op = button.getText().toString();
         String number = numberField.getText().toString();
         // если введенно что-нибудь
-        if(number.length()>0){
+        if (number.length() > 0) {
             number = number.replace(',', '.');
-            try{
+            try {
                 performOperation(Double.valueOf(number), op);
-            }catch (NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 numberField.setText("");
             }
         }
         lastOperation = op;
         operationField.setText(lastOperation);
     }
-    private void performOperation(Double number, String operation){
 
-        if(operand ==null){
+    private void performOperation(Double number, String operation) {
+
+        if (operand == null) {
             operand = number;
-        }
-        else{
-            if(lastOperation.equals("=")){
+        } else {
+            if (lastOperation.equals("=")) {
                 lastOperation = operation;
             }
-            switch(lastOperation){
+            switch (lastOperation) {
                 case "=":
-                    operand =number;
+                    operand = number;
                     break;
                 case "/":
-                    if(number==0){
-                        operand =0.0;
-                    }
-                    else{
-                        operand /=number;
+                    if (number == 0) {
+                        operand = 0.0;
+                    } else {
+                        operand /= number;
                     }
                     break;
                 case "*":
-                    operand *=number;
+                    operand *= number;
                     break;
                 case "+":
-                    operand +=number;
+                    operand += number;
                     break;
                 case "-":
-                    operand -=number;
+                    operand -= number;
                     break;
             }
         }

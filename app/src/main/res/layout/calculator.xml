@@ -11,16 +11,16 @@
         android:id="@+id/resultField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:gravity="end"
         android:textColor="@color/black"
-        android:layout_marginBottom="50dp"
         android:textSize="@dimen/text_size_result" />
-    <!-- поле знака операции -->
+
     <TextView
         android:id="@+id/operationField"
         android:layout_width="0dp"
-        android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:textSize="@dimen/text_size_result" />
 
     <!-- поле ввода чисел -->
@@ -28,8 +28,8 @@
         android:id="@+id/numberField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:inputType="phone"
         android:gravity="end"
+        android:inputType="phone"
         android:textSize="@dimen/text_size" />
 
     <TableRow
@@ -43,9 +43,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_span="2"
-            android:text="@string/_C"
             android:onClick="onOperationClick"
-            />
+            android:text="@string/_C" />
 
         <Button
             android:id="@+id/button_procent"
@@ -74,9 +73,8 @@
             style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_7"
             android:onClick="onNumberClick"
-            />
+            android:text="@string/_7" />
 
         <Button
             android:id="@+id/button_8"
