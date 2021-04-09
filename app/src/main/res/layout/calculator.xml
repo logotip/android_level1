@@ -1,171 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_columnSpan="4"
-    android:background="@drawable/flower"
+    android:background="@drawable/babocka"
     android:gravity="bottom"
     android:orientation="horizontal">
 
     <TextView
         android:id="@+id/resultField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/text_size"
-       >
+        style="@style/ViewStyle" />
     <!-- поле знака операции -->
     <TextView
         android:id="@+id/operationField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/text_size">
+        style="@style/ViewStyle" />
 
     <!-- поле ввода чисел -->
     <EditText
         android:id="@+id/numberField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:textSize="@dimen/text_size"
-        >
+        style="@style/ViewStyle" />
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_C"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_span="2"
-            android:text="@string/_C"
-            android:textSize="@dimen/button_text" />
-        <Button
-            android:id="@+id/button_procent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/MyStyle"
 
-            android:text="@string/_procent"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:onClick="onOperationClick"
+            android:text="@string/_C" />
+
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_delete"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_delete"
-            android:textSize="@dimen/button_text" />
+            android:onClick="onOperationClick"
+            android:text="@string/_delete" />
     </TableRow>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
-        <Button
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_7"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_7"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_7" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_8"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_8"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_8" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_9"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_9"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_9" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_increase"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_increase"
-            android:textSize="@dimen/button_text" />
+            android:onClick="onOperationClick"
+            android:text="@string/_increase" />
     </TableRow>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
-        <Button
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_4"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_4"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_4" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_5"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_5"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_5" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_6"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_6"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_6" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_minus"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_minus"
-            android:textSize="@dimen/button_text" />
+            android:onClick="onOperationClick"
+            android:text="@string/_minus" />
     </TableRow>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
-        <Button
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_1"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_1"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_1" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_2"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_2"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_2" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_3"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_3"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_3" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_plus"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_plus"
-            android:textSize="@dimen/button_text" />
+            android:onClick="onOperationClick"
+            android:text="@string/_plus" />
     </TableRow>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="6dp"
         android:gravity="center">
-        <Button
-            android:id="@+id/button_0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_0"
-            android:layout_span="2"
-            android:textSize="@dimen/button_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_0"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:onClick="onNumberClick"
+            android:text="@string/_0" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_point"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_point"
-            android:textSize="@dimen/button_text" />
-        <Button
+            android:onClick="onNumberClick"
+            android:text="@string/_point" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_equal"
+            style="@style/MyStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_equal"
-            android:textSize="@dimen/button_text" />
+            android:onClick="onOperationClick"
+            android:text="@string/_equal" />
     </TableRow>
 
 </TableLayout>
