@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_columnSpan="4"
-    android:background="@drawable/babocka"
+    android:background="@drawable/flower"
     android:gravity="bottom"
+    style="@style/AppTheme"
     android:orientation="horizontal">
 
     <TextView
@@ -28,18 +29,15 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_C"
             style="@style/MyStyle"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_span="2"
-
-            android:text="@string/_C" />
+            android:layout_span="3"
+            android:text="@string/_return" />
 
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_delete"
             style="@style/MyStyle"
-            android:layout_span="2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onOperationClick"

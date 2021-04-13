@@ -1,20 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_columnSpan="4"
+    android:background="@drawable/flower"
+    android:gravity="bottom"
+    style="@style/AppTheme"
+    android:orientation="horizontal">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Это второе актививити!"
-        android:textSize="@dimen/text_size"
-        android:background="@color/Teal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/resultField"
+        style="@style/ViewStyle" />
+    <!-- поле знака операции -->
+    <TextView
+        android:id="@+id/operationField"
+        style="@style/ViewStyle" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- поле ввода чисел -->
+    <EditText
+        android:id="@+id/numberField"
+        style="@style/ViewStyle" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_C"
+            style="@style/MyStyle"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:onClick="onOperationClick"
+            android:text="@string/_C" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_delete"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onOperationClick"
+            android:text="@string/_delete" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_7"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_7" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_8"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_8" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_9"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_9" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_increase"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onOperationClick"
+            android:text="@string/_increase" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_4"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_5"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_6"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_6" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_minus"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onOperationClick"
+            android:text="@string/_minus" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_1"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_2"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_3"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_plus"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onOperationClick"
+            android:text="@string/_plus" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="6dp"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_0"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:onClick="onNumberClick"
+            android:text="@string/_0" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_point"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNumberClick"
+            android:text="@string/_point" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_equal"
+            style="@style/MyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onOperationClick"
+            android:text="@string/_equal" />
+    </TableRow>
+
+</TableLayout>

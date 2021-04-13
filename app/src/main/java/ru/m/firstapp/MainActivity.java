@@ -1,5 +1,6 @@
 package ru.m.firstapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     Double operand = null;
     String lastOperation = "=";
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
         resultField = (TextView) findViewById(R.id.resultField);
         numberField = (EditText) findViewById(R.id.numberField);
         operationField = (TextView) findViewById(R.id.operationField);
+        Button btnGreetings = findViewById(R.id.button_C);
+        btnGreetings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent runSettings = new Intent(MainActivity.this, AnotherActivity.class);
+                startActivity(runSettings);
+            }
+        });
     }
 
     protected void onSaveInstateState(Bundle outState) {
